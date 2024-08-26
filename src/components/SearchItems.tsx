@@ -1,11 +1,10 @@
-import { Input } from "./ui/input"
-import Spinner from "./ui/spinner"
-
+import { Input } from "./ui/input";
+import Spinner from "./ui/spinner";
 
 interface Props {
-  inputValue: string
-  setInputValue: (value: string) => void
-  isHandling?: boolean
+  inputValue: string;
+  setInputValue: (value: string) => void;
+  isHandling?: boolean;
 }
 
 const SearchItems = ({ inputValue, setInputValue, isHandling }: Props) => {
@@ -13,11 +12,11 @@ const SearchItems = ({ inputValue, setInputValue, isHandling }: Props) => {
     <div className="relative mt-8 mb-5">
       <Input
         value={inputValue}
-        onChange={(e:any) => {
-          setInputValue(e.target.value)
+        onChange={(e: any) => {
+          setInputValue(e.target.value);
         }}
         placeholder="Search movies"
-        className="text-base w-3/6"
+        className="text-base"
       />
       {isHandling && (
         <div className="absolute top-2 right-2">
@@ -25,7 +24,7 @@ const SearchItems = ({ inputValue, setInputValue, isHandling }: Props) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SearchItems
+export default SearchItems;
