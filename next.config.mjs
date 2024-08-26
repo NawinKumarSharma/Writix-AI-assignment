@@ -7,8 +7,13 @@ const nextConfig = {
         hostname: "fakestoreapi.com/",
         pathname: "/products",
       },
+      {
+        protocol: "https",
+        hostname: "images-na.ssl-images-amazon.com",
+        pathname: "/images",
+      },
     ],
-    domains: ["fakestoreapi.com"],
+    domains: ["fakestoreapi.com", "images-na.ssl-images-amazon.com"],
   },
 };
 
