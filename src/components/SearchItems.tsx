@@ -1,5 +1,5 @@
-import ProductSkeleton from "./Product/ProductSkeleton"
 import { Input } from "./ui/input"
+import Spinner from "./ui/spinner"
 
 
 interface Props {
@@ -17,11 +17,11 @@ const SearchItems = ({ inputValue, setInputValue, isHandling }: Props) => {
           setInputValue(e.target.value)
         }}
         placeholder="Search movies"
-        className="text-base"
+        className="text-base w-3/6"
       />
       {isHandling && (
         <div className="absolute top-2 right-2">
-          <ProductSkeleton />
+          <Spinner />
         </div>
       )}
     </div>

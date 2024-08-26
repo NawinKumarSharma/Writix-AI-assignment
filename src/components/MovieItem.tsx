@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Movie } from "../../movis-data";
+import { Movie } from "../../Data/movies-data";
 
 const MovieItem = ({ movie }: { movie: Movie }) => {
   return (

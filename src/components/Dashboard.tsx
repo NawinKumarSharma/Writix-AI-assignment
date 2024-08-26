@@ -24,11 +24,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ModeToggle } from "./ModeToggle";
 import SearchItems from "./SearchItems";
-import { Movie, MOVIE_DATA } from "../../movis-data";
+import { Movie, MOVIE_DATA } from "../../Data/movies-data";
 import { useCallback, useEffect, useState } from "react";
 import MoviesList from "./MoviesList";
+import { Progress } from "./ui/progress";
 
 export function Dashboard() {
   const [inputValue, setInputValue] = useState<string>("");
@@ -110,6 +110,13 @@ export function Dashboard() {
                 <LineChart className="h-4 w-4" />
                 Analytics
               </Link>
+              <div className="mt-10">
+                <p className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all cursor-pointer">
+                  Progress -{" "}
+                  <span className="font-bold text-green-500">78%</span>
+                </p>
+                <Progress value={78} />
+              </div>
             </nav>
           </div>
         </div>
@@ -174,6 +181,13 @@ export function Dashboard() {
                   <LineChart className="h-5 w-5" />
                   Analytics
                 </Link>
+                <div className="mt-10">
+                  <p className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all cursor-pointer">
+                    Progress -{" "}
+                    <span className="font-bold text-green-500">78%</span>
+                  </p>
+                  <Progress value={78} />
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
@@ -196,7 +210,7 @@ export function Dashboard() {
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Products</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">MOVIES AND SERIES -</h1>
           </div>
           <MoviesList
             movies={inputValue.length > 0 ? filteredList : initialList}
