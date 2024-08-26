@@ -17,7 +17,7 @@ export function Navbar() {
         <div className="flex items-center justify-end flex-1 space-x-4">
           <nav className="flex items-center space-x-1">
             <Link
-              href="https://github.com/nawinkumarsharma/"
+              href="https://github.com/NawinKumarSharma/Writix-AI-assignment"
               target="_blank"
               rel="noreferrer"
             >
@@ -31,7 +31,7 @@ export function Navbar() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <Link href="https://x.com" target="_blank" rel="noreferrer">
+            <Link href="https://x.com/nawinscript" target="_blank" rel="noreferrer">
               <div
                 className={buttonVariants({
                   size: "sm",
