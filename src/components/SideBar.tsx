@@ -5,7 +5,6 @@ import {
   FileVideo,
   Home,
   LineChart,
-  Package,
   ShoppingCart,
   Users,
 } from "lucide-react";
