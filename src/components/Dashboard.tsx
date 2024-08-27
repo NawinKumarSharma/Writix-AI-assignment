@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Bell, Package2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SearchItems from "./SearchItems";
-import { MOVIE_DATA } from "../../Data/movies-data";
+import { MOVIE_DATA } from "../Data/movies-data";
 import MoviesList from "./MoviesList";
 import SideBar from "./SideBar";
 import SideBarMobileView from "./SideBar-mobile";

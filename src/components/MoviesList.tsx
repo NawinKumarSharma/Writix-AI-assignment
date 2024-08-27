@@ -1,4 +1,4 @@
-import { Movie } from "../../Data/movies-data";
+import { Movie } from "../Data/movies-data";
 import MovieItem from "./MovieItem";
 
 const MoviesList = ({
