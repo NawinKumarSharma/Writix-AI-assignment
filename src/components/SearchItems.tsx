@@ -9,14 +9,14 @@ interface Props {
 
 const SearchItems = ({ inputValue, setInputValue, isHandling }: Props) => {
   return (
-    <div className="relative mt-8 mb-5">
+    <div className="relative mt-5 mb-5">
       <Input
         value={inputValue}
         onChange={(e: any) => {
           setInputValue(e.target.value);
         }}
         placeholder="Search movies"
-        className="text-base"
+        className="text-base w-full"
       />
       {isHandling && (
         <div className="absolute top-2 right-2">

@@ -1,11 +1,10 @@
 "use client";
+import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Bell, Package2 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import SearchItems from "./SearchItems";
-import { Movie, MOVIE_DATA } from "../../Data/movies-data";
-import { useCallback, useEffect, useState } from "react";
+import { MOVIE_DATA } from "../../Data/movies-data";
 import MoviesList from "./MoviesList";
 import SideBar from "./SideBar";
 import SideBarMobileView from "./SideBar-mobile";
@@ -13,16 +12,20 @@ import DropDown from "./DropDown";
 
 export function Dashboard() {
   const [inputValue, setInputValue] = useState<string>("");
-  const [initialList] = useState(MOVIE_DATA);
+  const [selectedType, setSelectedType] = useState<string>("");
   const [filteredList, setFilteredList] = useState(MOVIE_DATA);
 
   // Search Handler
   const searchHandler = useCallback(() => {
-    const filteredData = initialList.filter((movie) => {
-      return movie.title.toLowerCase().includes(inputValue.toLowerCase());
+    const filteredData = MOVIE_DATA.filter((movie) => {
+      const matchesType = selectedType ? movie.type === selectedType : true;
+      return (
+        matchesType &&
+        movie.title.toLowerCase().includes(inputValue.toLowerCase())
+      );
     });
     setFilteredList(filteredData);
-  }, [initialList, inputValue]);
+  }, [inputValue, selectedType]);
 
   // EFFECT: Search Handler
   useEffect(() => {
@@ -44,7 +47,7 @@ export function Dashboard() {
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-5 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Writix AI</span>
+              <span>Writix AI</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
@@ -57,10 +60,13 @@ export function Dashboard() {
         </div>
       </div>
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center justify-start gap-x-10 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <SideBarMobileView />
           <SearchItems inputValue={inputValue} setInputValue={setInputValue} />
-          <DropDown />
+          <DropDown
+            selectedType={selectedType}
+            setSelectedType={setSelectedType}
+          />
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex items-center">
@@ -68,9 +74,7 @@ export function Dashboard() {
               MOVIES AND SERIES -
             </h1>
           </div>
-          <MoviesList
-            movies={inputValue.length > 0 ? filteredList : initialList}
-          />
+          <MoviesList movies={filteredList} />
         </main>
       </div>
     </div>

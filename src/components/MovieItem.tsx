@@ -4,7 +4,6 @@ import { Movie } from "../../Data/movies-data";
 const MovieItem = ({ movie }: { movie: Movie }) => {
   return (
     <div className="relative overflow-hidden rounded-md shadow-sm h-96 cursor-pointer">
-      {/* Content */}
       <div className="relative z-20 flex flex-col justify-end w-full h-full px-4 pb-10">
         <div className="flex items-center gap-2 ">
           <div className="inline-block px-2 py-1 text-xs rounded-md line-clamp-1 bg-yellow-100/80 text-slate-900">
@@ -13,9 +12,6 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
           <div className="inline-block px-2 py-1 text-xs rounded-md line-clamp-1 bg-slate-800/80 text-slate-200">
             {movie.type.toUpperCase()}
           </div>
-          {/* <div className="inline-block px-2 py-1 text-xs rounded-md line-clamp-1 bg-slate-800/80 text-slate-200">
-            {movie.genre.toUpperCase()}
-          </div> */}
         </div>
         <h2 className="mt-2 text-2xl font-semibold dark:text-slate-200">
           {movie.title}
