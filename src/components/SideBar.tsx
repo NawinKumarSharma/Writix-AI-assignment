@@ -2,6 +2,7 @@
 import Link from "next/link";
 import {
   Bell,
+  FileVideo,
   Home,
   LineChart,
   Package,
@@ -27,7 +28,7 @@ const SideBar = () => {
           className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
         >
           <ShoppingCart className="h-4 w-4" />
-          Orders
+          Premium
           <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
             6
           </Badge>
@@ -36,15 +37,15 @@ const SideBar = () => {
           href="#"
           className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
         >
-          <Package className="h-4 w-4" />
-          Products{" "}
+          <FileVideo className="h-4 w-4" />
+          ALL MOVIES AND SERIES{" "}
         </Link>
         <Link
           href="#"
           className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
         >
           <Users className="h-4 w-4" />
-          Customers
+          Broadcast
         </Link>
         <Link
           href="#"
