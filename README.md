@@ -1,10 +1,11 @@
 # Writix AI ( Frontend Development Task )
 
-This project is a responsive web application built with Next.js and TypeScript, featuring a modern and professional layout based on a provided wireframe. 
+This project is a responsive web application built with Next.js and TypeScript, featuring a modern and professional layout based on a provided wireframe.
 
 ## Overview
 
 The Writix AI Dashboard includes:
+
 - A responsive layout as specified in the wireframe.
 - Various components such as Navbar, Sidebar, Search Bar, Categories Dropdown, and Feature Cards.
 - Basic interactivity and advanced features including search functionality and a functional categories dropdown.
@@ -56,15 +57,18 @@ To run this project locally, follow these steps:
 ### Approach
 
 1. **Layout Implementation:**
+
    - Implemented a responsive layout using CSS Grid and Flexbox to match the provided wireframe.
    - Ensured the design adapts to different screen sizes.
 
 2. **Component Development:**
+
    - Used Next.js with TypeScript for the project setup.
    - Used shadcn as a component library for design insipiration of components
    - Developed components to ensure type safety and modularity.
 
 3. **Interactivity:**
+
    - Search functionality is simulated with mock data.
    - Dropdown for categories is fully functional and updates the displayed content based on user selection.
    - Can toggle between dark mode and light mode (default setup is dark mode)

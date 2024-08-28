@@ -31,7 +31,11 @@ export function Navbar() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <Link href="https://x.com/nawinscript" target="_blank" rel="noreferrer">
+            <Link
+              href="https://x.com/nawinscript"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div
                 className={buttonVariants({
                   size: "sm",
